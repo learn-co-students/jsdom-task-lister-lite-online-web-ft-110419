@@ -3,7 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	form[1].addEventListener("click", function(){
 		let list = document.querySelector("ul#tasks")
 		let li = document.createElement("li")
-		li.innerHTML = form[0].value + "   "
+		p = document.createElement("p")
+		li.appendChild(p)
+		p.innerHTML = form[0].value + "      "
 		let button = document.createElement("button")
 		button.innerHTML = "Delete Task"
 		button.addEventListener("click", function(){
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			submit.value = "edit"
 			textbox.parentNode.appendChild(submit)
 			submit.addEventListener("click", function() {
-				submit.parentNode.innerText = textbox.value
+				submit.parentNode.children[0].innerText = textbox.value
 			})
 		})
 	})
